@@ -13,18 +13,18 @@ def solution(xs):
         if xs[i] == 0:
             xs[i] = 1
         elif xs[i] < 0:
-            negativeValues.append(xs[i])
+            negativeValues.append(abs(xs[i]))
             xs[i] = 1
 
     if len(negativeValues) % 2 != 0:
         negativeValues.sort()
-        del negativeValues[-1]
+        del negativeValues[0]
     xs = xs+negativeValues
 
-    prod = 1.
+    prod = 1
     for j in range(len(xs)):
         prod = prod*xs[j]
 
-    return str(int(prod))
+    return str(prod)
 
-print(solution([-1000, 0, -1000, 23, 24, 24, 151,984,444,464,859,848, 888,0,]))
+print(solution([-2, -3, 4, -5]))
