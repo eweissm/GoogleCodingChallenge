@@ -21,7 +21,7 @@ def solution(xs):
         del negativeValues[-1]
     xs = xs+negativeValues
 
-    prod = 1..
+    prod = 1.
     for j in range(len(xs)):
         prod = prod*xs[j]
 
