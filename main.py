@@ -6,11 +6,9 @@
 #else, we will remove smallest magnitude neg and then
 
 
-import math
 def solution(xs):
-    xs.sort()
-    negativeValues = []
 
+    negativeValues = []
     for i in range(len(xs)):
         if xs[i] == 0:
             xs[i] = 1
@@ -19,10 +17,14 @@ def solution(xs):
             xs[i] = 1
 
     if len(negativeValues) % 2 != 0:
+        negativeValues.sort()
         del negativeValues[-1]
-
     xs = xs+negativeValues
 
-    return str(math.prod(xs))
+    prod = 1..
+    for j in range(len(xs)):
+        prod = prod*xs[j]
 
-print(solution([-2, -3, 4, -5]))
+    return str(int(prod))
+
+print(solution([-1000, 0, -1000, 23, 24, 24, 151,984,444,464,859,848, 888,0,]))
