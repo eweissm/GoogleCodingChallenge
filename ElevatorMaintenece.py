@@ -29,4 +29,3 @@ def DeliminateVersionCode(code):
     return version_parameters
 
 print(solution(["1.11", "2.0.0", "1.2", "2", "0.1", "1.2.1", "1.1.1", "2.0"]))
-#if version_parameters[0] > version_parameters_next[0] or (version_parameters[0] == version_parameters_next[0] and version_parameters[1] > version_parameters_next[1]) or (version_parameters[0] == version_parameters_next[0] and version_parameters[1] == version_parameters_next[1] and version_parameters[2] > version_parameters_next[2]):
