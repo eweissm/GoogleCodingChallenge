@@ -7,20 +7,14 @@
 
 def solution(xs):
 
-    negativeValues = []
-    for i in range(len(xs)):
-        if xs[i] == 0:
-            xs[i] = 1
-        elif xs[i] < 0:
-            negativeValues.append(abs(xs[i]))
-            xs[i] = 1
+    negativeValues = [i for i in xs if i < 0]
+    xs = [i for i in xs if i > 0]
 
     if len(negativeValues) % 2 != 0:
         negativeValues.sort()
-        del negativeValues[0]
-    xs = xs+negativeValues
+        del negativeValues[-1]
 
-    xs = remove_items(xs, 1)
+    xs = xs+negativeValues
 
     if bool(xs):
         prod = 1
@@ -31,11 +25,8 @@ def solution(xs):
 
     return str(prod)
 
-def remove_items(test_list, item):
-    res = [i for i in test_list if i != item]
-    return res
 
-print(solution([-3, 3, -7, 523, 87, 861,78413,4856]))
+print(solution([-1, -1]))
 print(solution([2, 0, 2, 2, 0]))
-print(solution([-2, -3, -4, -5]))
+print(solution([-2, -3, 4, -5]))
 print(solution([0,0,0,0]))
