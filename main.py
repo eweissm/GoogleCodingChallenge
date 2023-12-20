@@ -21,10 +21,10 @@ def solution(xs):
         del negativeValues[0]
     xs = xs+negativeValues
 
-    prod = 1
+    prod = 1.
     for j in range(len(xs)):
         prod = prod*xs[j]
 
-    return str(prod)
+    return str(int(prod))
 
 print(solution([-2, -3, 4, -5]))
