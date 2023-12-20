@@ -9,6 +9,7 @@ def solution(xs):
     areZeros = 0 in xs
     negativeValues = [i for i in xs if i < 0]
     xs = [i for i in xs if i > 0]
+
     if len(negativeValues) % 2 != 0 and (bool(xs) or areZeros):
         negativeValues.sort()
         del negativeValues[-1]
