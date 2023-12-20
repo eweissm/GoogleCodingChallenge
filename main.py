@@ -1,5 +1,5 @@
 # Challenge 4
-# bomb babys
+# bomb baby's
 
 #problem has symmetry... it really doesnt matter if we are looking at M or F in any particular search...
 
@@ -10,18 +10,18 @@ def solution(M, F):
     n = 0
     SolvedState = 0
 
-    while SolvedState == 0 and M>0 and F>0:
-        if (M == F):
-            if (M == 1):
+    while SolvedState == 0 and M > 0 and F > 0:
+        if M == F:
+            if M == 1:
                 SolvedState = 1  # solved
             else:
                 SolvedState = 2  # impossible
         else:
             n = n + 1
 
-            if(M > F):
+            if M > F:
                 M = M-F
-            elif(M < F):
+            elif M < F:
                 F = F-M
 
     if SolvedState == 1:
@@ -32,4 +32,5 @@ def solution(M, F):
 print(solution('4', '7')) #4
 print(solution('1', '2')) #1
 print(solution('1', '1')) #0
-print(solution('2', '4')) #1
+print(solution('2', '4')) #impossible
+print(solution('1000', '101')) #1
