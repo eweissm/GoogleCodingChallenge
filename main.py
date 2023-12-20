@@ -3,4 +3,3 @@
 
 
 def solution(l):
-    ## challenge 2

@@ -1,4 +1,4 @@
-
+## challenge 2
 
     # take a list of integers and find the subset which returns the highest product
     #  remove integers that will be useless for now (i.e. 0) ... hold on to the negatives on the side
