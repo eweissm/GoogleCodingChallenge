@@ -8,10 +8,11 @@
 def solution(xs):
     negativeValues = [i for i in xs if i < 0]
     xs = [i for i in xs if i > 0]
-    if len(negativeValues) % 2 != 0:
+    if len(negativeValues) % 2 != 0 and bool(xs):
         negativeValues.sort()
         del negativeValues[-1]
     xs = xs+negativeValues
+
     if bool(xs):
         prod = 1
         for j in range(len(xs)):
@@ -20,8 +21,8 @@ def solution(xs):
         prod = 0
     return str(prod)
 
-print(solution([-1, -1, -2]))
-print(solution([2, 0, 2, 2, 0]))
-print(solution([-2, -3, 4, -5]))
-print(solution([0,0,0,0]))
-print(solution([751,4271,142,241,71,11,-5,21,12, 32,244, 244, 145, 134,13, 135, 577, 674, 2345, 3521,434, 2234,2423,1313,232,23]))
+print(solution([-8,  2])) #2
+print(solution([2, 0, 2, 2, 0])) #8
+print(solution([-2, -3, 4, -5])) #60
+print(solution([0,0,0,0])) #0
+print(solution([-4])) #-4
