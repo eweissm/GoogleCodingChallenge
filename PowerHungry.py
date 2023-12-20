@@ -1,9 +1,9 @@
 ## challenge 2
 
-    # take a list of integers and find the subset which returns the highest product
-    #  remove integers that will be useless for now (i.e. 0) ... hold on to the negatives on the side
-    # if we have an even num of neg values --> add the negative values back to the list
-    # else, we will remove smallest magnitude neg and then
+# take a list of integers and find the subset which returns the highest product
+#  remove integers that will be useless for now (i.e. 0) ... hold on to the negatives on the side
+# if we have an even num of neg values --> add the negative values back to the list
+# else, we will remove smallest magnitude neg and then
 
     def solution(xs):
         areZeros = 0 in xs
