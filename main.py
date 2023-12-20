@@ -17,20 +17,25 @@ def solution(M, F):
             else:
                 SolvedState = 2  # impossible
         else:
-            n = n + 1
 
             if M > F:
-                M = M-F
-            elif M < F:
-                F = F-M
+                n_inc = max(int((M-F)/F), 1)
+                M -= (F*n_inc)
+            else:
+                n_inc = max(int((F - M) /M), 1)
+                F -= (M* n_inc)
+
+            n +=n_inc
+
 
     if SolvedState == 1:
         return str(n)
     else:
         return "impossible"
 
-print(solution('4', '7')) #4
-print(solution('1', '2')) #1
-print(solution('1', '1')) #0
-print(solution('2', '4')) #impossible
-print(solution('1000', '101')) #1
+
+print(solution('4', '7'))  # 4
+print(solution('1', '2'))  # 1
+print(solution('1', '1'))  # 0
+print(solution('2', '4'))  # impossible
+
