@@ -1,41 +1,38 @@
-# Challenge 4
-# bomb baby's
+#challenge 5
+# Stairs
 
-#problem has symmetry... it really doesnt matter if we are looking at M or F in any particular search...
+#n in range 3 to 200
+# rules:
+#   Each type of staircase should consist of 2 or more steps.
+#   No two steps are allowed to be at the same height - each step must be lower than the previous one.
+#   All steps must contain at least one brick.
+#   A step's height is classified as the total amount of bricks that make up that step.
+def solution(n):
+    prev_f_list = []
 
-# I definitely wrote an alpha-beta pruning algorithm before realizing that I was doing this problem backwards... dont hire me
-def solution(M, F):
-    M = int(M)
-    F = int(F)
-    n = 0
-    SolvedState = 0
+    for i in range(1, n+1):
+        f = 0
 
-    while SolvedState == 0 and M > 0 and F > 0:
-        if M == F:
-            if M == 1:
-                SolvedState = 1  # solved
-            else:
-                SolvedState = 2  # impossible
+        if i<3:
+            f = 0
+        elif i == 3:
+            f = 1
         else:
-
-            if M > F:
-                n_inc = max(int((M-F)/F), 1)
-                M -= (F*n_inc)
+            if i%2 == 0:
+                A = int(i / 2 - 1)
             else:
-                n_inc = max(int((F - M) /M), 1)
-                F -= (M* n_inc)
+                A = int(i/ 2)
 
-            n +=n_inc
-
-
-    if SolvedState == 1:
-        return str(n)
-    else:
-        return "impossible"
+            #print("A:"+str(A))
+            #print("i:" + str(i))
+            for j in range(1,A+1): #1 to A
+                #print("j:"+str(j))
+                f += max(1 + int(prev_f_list[i-j-1] / 2) - (j-1),1)
 
 
-print(solution('4', '7'))  # 4
-print(solution('1', '2'))  # 1
-print(solution('1', '1'))  # 0
-print(solution('2', '4'))  # impossible
+        prev_f_list.append(f)
+        print(prev_f_list)
 
+    return prev_f_list[n-1]
+
+print(solution(10))
