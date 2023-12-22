@@ -55,6 +55,9 @@ def solution(a):
             print("k:"+str(k))
             SolutionList[k] += SolutionList[k-n]
 
+    for j in range(3, a+1):
+        SolutionList[j]-=1
+
     print(SolutionList)
     return SolutionList[a]
 def zeros(n):
